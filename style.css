@@ -44,3 +44,22 @@ body {
 .profile-pic > img {
     height: 200px;
 }
+
+@media (max-width: 700px) {
+    .me {
+        grid-template-columns: 1fr;
+    }
+
+    .me > .content {
+        grid-row-start: 2;
+    }
+
+    .me > .profile-pic {
+        grid-row-start: 1;
+    }
+
+    .profile-pic {
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+}
