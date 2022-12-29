@@ -64,7 +64,6 @@ body {
 }
 
 .button {
-  background-color: #4caf50; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -75,11 +74,33 @@ body {
   font-weight: bold;
   margin: 4px 2px;
   cursor: pointer;
-  background-color: #f44336;
-
   border-radius: 10px;
   border: 4px solid #000000;
   box-shadow: 4px 4px 0px #000000;
+}
+
+.btn-blue {
+  background-color: #38dbff;
+}
+
+.btn-orange {
+  background-color: #ffb443;
+}
+
+.btn-yellow {
+  background-color: #fff503;
+}
+
+.btn-red {
+  background-color: #ff5d5d;
+}
+
+.btn-green {
+  background-color: #00ff75;
+}
+
+.btn-purple {
+  background-color: #dd7dff;
 }
 
 .raise:hover,
