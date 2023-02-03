@@ -26,29 +26,29 @@
 
       function main() {
         // Get one of the indicators
-        const indicator1 = root.querySelector('[data-rb-indicator-id="temp1"]');
+        const indicator1 = root.querySelector('[data-rb-indicator-id="temp2"]');
+        const indicators = [...root.querySelectorAll("[data-rb-indicator-id]")];
 
-        function gc(el) {
+        function gc(el, inForeign) {
           if (!el) return;
+          let setForeign = inForeign;
           children = [...el.children];
-          children.forEach((child) => {
-            if (child.localName === "text") {
-              child.id = "uniek1";
 
-              setInterval(() => {
-                const el = document.getElementById("uniek1");
-                let count = parseInt(el.innerHTML, 10);
-                if (isNaN(count)) count = 0;
-                count++;
-                console.log(el);
-                el.innerHTML = count;
-              }, 300);
-            }
-            gc(child);
+          if (el.localName === "foreignObject") setForeign = true;
+
+          // deepest div in foreign object contains the text
+          if (inForeign && children.length === 0 && el.localName === "div") {
+            el.innerHTML = "Found it!";
+          }
+
+          children.forEach((child) => {
+            gc(child, setForeign);
           });
         }
 
-        gc(indicator1);
+        indicators.forEach((indicator) => {
+          gc(indicator, false);
+        });
       }
     })();
   </script>
