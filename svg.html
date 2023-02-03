@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="svg-root"></div>
+  </body>
+
+  <script>
+    (function () {
+      console.log("Started");
+      const root = document.getElementById("svg-root");
+
+      fetch("sample_pid.svg")
+        .then((res) => res.text())
+        .then((res) => {
+          root.innerHTML = res;
+
+          main();
+        })
+        .catch((err) => console.error(err));
+
+      function main() {
+        // Get one of the indicators
+        const indicator1 = root.querySelector('[data-rb-indicator-id="temp1"]');
+
+        function gc(el) {
+          if (!el) return;
+          children = [...el.children];
+          children.forEach((child) => {
+            if (child.localName === "text") {
+              child.id = "uniek1";
+
+              setInterval(() => {
+                const el = document.getElementById("uniek1");
+                let count = parseInt(el.innerHTML, 10);
+                if (isNaN(count)) count = 0;
+                count++;
+                console.log(el);
+                el.innerHTML = count;
+              }, 300);
+            }
+            gc(child);
+          });
+        }
+
+        gc(indicator1);
+      }
+    })();
+  </script>
+</html>
