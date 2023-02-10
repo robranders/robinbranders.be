@@ -25,11 +25,12 @@ body {
   background-color: #f2f2f2;
   border-left: 2px solid #000000;
   border-right: 2px solid #000000;
-  height: calc(100vh - 88px);
+  min-height: calc(100vh - 88px);
   padding-top: 20px;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
   padding-left: 20px;
   padding-right: 20px;
@@ -110,6 +111,22 @@ body {
 
 .raise:active {
   background-color: #b9332a;
+}
+
+.hmi-root {
+  text-align: center;
+  background-color: #b0c4de;
+}
+
+.hmi-root > h3 {
+  padding-bottom: 10px;
+}
+
+#hmi-container {
+  border: 4px solid #000000;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #decab0;
 }
 
 @media (max-width: 700px) {
