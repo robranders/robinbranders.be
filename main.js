@@ -1,4 +1,10 @@
 (function () {
+  const setFooter = () => {
+    const footerTxt = document.getElementById("footer-txt");
+    if (!footerTxt) return;
+    const year = new Date().getFullYear();
+    footerTxt.innerHTML = `${year} robinbranders.be`;
+  };
   const pidSvg = () => {
     console.log("Started");
     const root = document.getElementById("svg-root");
@@ -68,5 +74,7 @@
       });
     });
   };
+
+  setFooter();
   pidSvg();
 })();
