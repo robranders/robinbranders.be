@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Robin Branders</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" src="graph/dygraph.css" />
   </head>
   <body>
     <div class="title"><h1>robinbranders.be</h1></div>
@@ -20,34 +21,15 @@
             technology, solving problems and finding novel solutions.
           </p>
           <br />
-
-          <button class="button raise btn-orange">About</button>
-          <button class="button raise btn-red">Github</button>
-          <button class="button raise btn-red">Linkedin</button>
-          <button class="button raise btn-red">Email</button>
+          <button class="button raise btn-red" onclick="location.href='https://www.linkedin.com/in/robin-branders-b1838a188/'">Linkedin</button>
         </div>
         <div class="profile-pic">
           <img src="profilepic.png" alt="profilepic" />
         </div>
       </div>
-      <div class="container-entry hmi-root">
-        <h3>Industrial Automation</h3>
-        <div id="hmi-container"><div id="svg-root"></div></div>
-        <div style="text-align: left">
-          <p>
-            Modern web development finds its way to the production floor. Not
-            only front end tools are being used. Linux, Docker, Node is getting
-            more prominent in industrial applications.
-          </p>
-          <p>
-            This is an example of an app that could replace HMI/SCADA. A P&ID
-            schematic is drawn in a SVG editor and converted to dynamic
-            component.
-          </p>
-        </div>
-      </div>
     </div>
     <div class="footer"><div id="footer-txt">robinbranders.be</div></div>
   </body>
+  <script type="text/javascript" src="graph/dygraph.js"></script>
   <script src="main.js"></script>
 </html>
